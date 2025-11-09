@@ -26,7 +26,7 @@ app.MapGet("/weatherforecast", () => "Hello World"
 .WithOpenApi();
 
 
-app.MapPost("/Usuario/login", (LoginDTO loginDTO) =>
+app.MapPost("/Usuario/login", (minimal_api.Dominio.DTOs.LoginDTO loginDTO) =>
 {
     if (loginDTO.Email == "adm@teste.com" && loginDTO.Senha == "123456")
     {
@@ -45,8 +45,3 @@ app.MapPost("/Usuario/login", (LoginDTO loginDTO) =>
 
 app.Run();
 
-public class LoginDTO
-{
-    public string Email { get; set; } = default!;
-    public string Senha { get; set; } = default!;
-}
